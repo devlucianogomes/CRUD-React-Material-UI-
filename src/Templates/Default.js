@@ -9,7 +9,6 @@ import Header from "../Partials/Header/Header";
 const useStyles = makeStyles(() => ({
   container: {
     padding: "10px 0",
-    border: "1px solid black",
   },
 }));
 

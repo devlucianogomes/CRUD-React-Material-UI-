@@ -10,18 +10,18 @@ import TemplatePage from "./Templates/Page";
 
 const App = () => {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Switch>
           <Route path="/customers">
-            <TemplatePage title="Customers" Component={Customers} />
+            <TemplatePage title="Usuários" Component={Customers} />
           </Route>
           <Route path="/">
-            <TemplatePage title="Home" Component={Home} />
+            <TemplatePage title="Página Inicial" Component={Home} />
           </Route>
         </Switch>
-      </Router>
-    </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   );
 };
 
