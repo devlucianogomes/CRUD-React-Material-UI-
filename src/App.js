@@ -6,21 +6,22 @@ import "./index.css";
 import Home from "./Pages/Home";
 import Customers from "./Pages/Customers";
 import TemplateDefault from "./Templates/Default";
+import TemplatePage from "./Templates/Page";
 
 const App = () => {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Switch>
           <Route path="/customers">
-            <Customers />
+            <TemplatePage title="Usuários" Component={Customers} />
           </Route>
           <Route path="/">
-            <Home />
+            <TemplatePage title="Página Inicial" Component={Home} />
           </Route>
         </Switch>
-      </Router>
-    </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   );
 };
 

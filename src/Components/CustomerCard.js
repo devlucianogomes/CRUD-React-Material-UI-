@@ -10,9 +10,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 
 // Passe por props, o que devera ser recebido de informações providas da api
-const CustomerCard = ({ name, lastname, email, avatar, className }) => {
+const CustomerCard = ({ name, lastname, email, avatar }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, margin: "20px auto" }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} src={avatar} aria-label="recipe">
