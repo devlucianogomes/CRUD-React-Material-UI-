@@ -28,11 +28,11 @@ const Customers = () => {
 
   return (
     <>
-      <h1>Customers</h1>
       <Grid container>
         {customers.map((item) => (
           <Grid item xs={12} md={6} lg={4}>
             <CustomerCard
+              name={item.first_name}
               lastname={item.last_name}
               email={item.email}
               avatar={item.avatar}
