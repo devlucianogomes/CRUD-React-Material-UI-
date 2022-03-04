@@ -4,6 +4,7 @@ import axios from "axios";
 import Grid from "@mui/material/Grid";
 import CustomerCard from "../../Components/CustomerCard";
 import { makeStyles } from "@material-ui/styles";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Customers = () => {
+  const history = useHistory();
   const [customers, setCustomers] = useState([]);
 
   // fazendo as requisicoes assim que montado o componente em tela
@@ -36,6 +38,9 @@ const Customers = () => {
     });
   };
 
+  const handleEditCustomer = (id) => {
+    history.push(`/customers/edit/${id}`);
+  };
   return (
     <>
       <Grid container>
@@ -48,6 +53,7 @@ const Customers = () => {
               email={item.email}
               avatar={item.avatar}
               onRemoveCustomer={handleRemoveCustomer}
+              onEditCustomer={handleEditCustomer}
             />
           </Grid>
         ))}

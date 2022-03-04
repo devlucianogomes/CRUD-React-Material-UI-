@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Toasty from "../../Components/Toasty";
 import "./form.css";
 
-const Register = () => {
+const Edit = () => {
+  const { id } = useParams();
+
   const [form, setForm] = useState({
     name: {
       value: "",
@@ -16,6 +19,25 @@ const Register = () => {
       error: false,
     },
   });
+
+  //
+  useEffect(() => {
+    axios.get(`https://reqres.in/api/users/${id}`).then((response) => {
+      const { data } = response.data;
+      setForm({
+        name: {
+          value: data.first_name,
+          error: false,
+        },
+        job: {
+          value: data.job,
+          error: false,
+        },
+      });
+    });
+  }, []);
+
+  console.log(form);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -57,7 +79,7 @@ const Register = () => {
       }
     }
     axios
-      .post("https://reqres.in/api/users", {
+      .put(`https://reqres.in/api/users/${id}`, {
         name: form.name.value,
         job: form.job.value,
       })
@@ -100,17 +122,17 @@ const Register = () => {
           variant="contained"
           color="primary"
         >
-          {isLoading ? "Processando..." : "Cadastrar"}
+          {isLoading ? "Processando..." : "Salvar Alterações"}
         </Button>
       </div>
       <Toasty
         onClose={() => setOpenToasty(false)}
         severity="success"
-        message="Cadastro Realizado com sucesso!"
+        message="Registro atualizado com sucesso!"
         open={openToasty}
       />
     </>
   );
 };
 
-export default Register;
+export default Edit;

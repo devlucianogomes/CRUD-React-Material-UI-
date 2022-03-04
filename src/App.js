@@ -9,12 +9,17 @@ import CustomersRegister from "./Pages/Customers/Register";
 
 import TemplateDefault from "./Templates/Default";
 import TemplatePage from "./Templates/Page";
+import Edit from "./Pages/Customers/Edit";
 
 const App = () => {
   return (
     <Router>
       <TemplateDefault>
         <Switch>
+          <Route path="/customers/edit/:id">
+            <TemplatePage title="Editar Clientes" Component={Edit} />
+          </Route>
+
           <Route path="/customers/add">
             <TemplatePage
               title="Cadastrar Clientes"
