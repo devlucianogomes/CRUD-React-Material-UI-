@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import do axios para consumo de api
 import axios from "axios";
 import Grid from "@mui/material/Grid";
-import CustomerCard from "../Components/CustomerCard";
+import CustomerCard from "../../Components/CustomerCard";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme) => ({
