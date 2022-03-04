@@ -13,8 +13,11 @@ const App = () => {
     <Router>
       <TemplateDefault>
         <Switch>
+          <Route path="/customers/add">
+            <TemplatePage title="Clientes" Component={Customers} />
+          </Route>
           <Route path="/customers">
-            <TemplatePage title="Usuários" Component={Customers} />
+            <TemplatePage title="Clientes" Component={Customers} />
           </Route>
           <Route path="/">
             <TemplatePage title="Página Inicial" Component={Home} />
