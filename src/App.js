@@ -4,7 +4,9 @@ import "./index.css";
 
 // Import Components
 import Home from "./Pages/Home";
-import Customers from "./Pages/Customers";
+import CustomerList from "./Pages/Customers/List";
+import CustomersRegister from "./Pages/Customers/Register";
+
 import TemplateDefault from "./Templates/Default";
 import TemplatePage from "./Templates/Page";
 
@@ -14,10 +16,13 @@ const App = () => {
       <TemplateDefault>
         <Switch>
           <Route path="/customers/add">
-            <TemplatePage title="Clientes" Component={Customers} />
+            <TemplatePage
+              title="Cadastrar Clientes"
+              Component={CustomersRegister}
+            />
           </Route>
           <Route path="/customers">
-            <TemplatePage title="Clientes" Component={Customers} />
+            <TemplatePage title="Clientes" Component={CustomerList} />
           </Route>
           <Route path="/">
             <TemplatePage title="Página Inicial" Component={Home} />

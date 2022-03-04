@@ -1,0 +1,19 @@
+.form {
+  margin: 0 auto;
+  width: 25%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form button {
+  margin-top: 30px;
+}
+
+.form .inputName {
+  margin-top: 30px;
+}
+
+.form .inputJob {
+  margin-top: 30px;
+}
